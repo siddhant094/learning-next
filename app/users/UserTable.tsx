@@ -14,7 +14,7 @@ interface Props {
 }
 
 const UserTable = async ({ sortOrder }: Props) => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    const res = await fetch('https://jsonplaceholder.typicode.com/xusers', {
         next: { revalidate: 10 },
     });
     const users: User[] = await res.json();
@@ -25,7 +25,6 @@ const UserTable = async ({ sortOrder }: Props) => {
 
     return (
         <div>
-            UserTable
             <table className='table table-bordered'>
                 <thead>
                     <tr>
